@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+    <div id="question1" class="q">
+        <h2 id="question">Who found the theory of relativity</h2>
+        <button id="correctedbtn" onclick="s(this)">Albert Einstein</button>
+        <button onclick="s(this)">Newton</button>
+        <button onclick="s(this)">Stephen Hawking</button>
+        <button onclick="s(this)">Feynman</button>
+        <button class="btn" onclick="next()">Next</button>
+    </div>
+
+
+    <div id="questions" class="question">
+        <h2 id="question">Who found the bulb</h2>
+        <button onclick="h(this)">Tesla</button>
+        <button id="correctbtn" onclick="h(this)">Edison</button>
+        <button onclick="h(this)">Stephen</button>
+        <button onclick="h(this)">Feynman Faraday</button>
+        <button class="btn" onclick="nxt()">Next</button>
+    </div>
+    <div id="question3" class="question3">
+        <h2 id="question">Which is Important</h2>
+        <button id="correct1btn" onclick="r(this)">MONEY</button>
+        <button onclick="r(this)">FAMILY</button>
+        <button onclick="r(this)">LOVE</button>
+        <button onclick="r(this)">FRIENDS</button>
+        <button class="btn" onclick="net()">End</button>
+    </div>
+    <H1 id="u">Score:0</H1>
+    </div>
+    <style>
+        body {
+            background: grey;
+
+        }
+
+        #question1 {
+            margin: 100px;
+            height: 195px;
+            width: 300px;
+            background: black;
+            color: white;
+            margin-left: 30px;
+            position: relative;
+        }
+
+        button {
+            display: block;
+            width: 280px;
+            margin: 1px;
+            background: lightgreen;
+            color: black;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+
+        .question {
+            background: black;
+            color: white;
+            margin-bottom: 100px;
+            height: 195px;
+            width: 300px;
+
+            margin-left: 30px;
+            display: none;
+            top: 100px;
+        }
+        .question3 {
+            background: black;
+            color: white;
+            margin-bottom: 100px;
+            height: 195px;
+            width: 300px;
+
+            margin-left: 30px;
+            display: none;
+            top: 100px;
+        }
+
+        .btn {
+            height: 25px;
+            width: 37px;
+        }
+    </style>
+
+    <script>
+        var totalscore = 0
+        var scoredispay = document.getElementById("u");
+        function s(selectedbtn) {
+            var correctedbtn = document.getElementById("correctedbtn")
+
+            if (selectedbtn == correctedbtn) {
+                correctedbtn.style.backgroundColor = "green";
+                selectedbtn.disabled = true;
+                correctedbtn.diabled = true;
+                totalscore = totalscore + 1;
+                scoredispay.textContent = "Score:" + totalscore
+            } else {
+                selectedbtn.style.backgroundColor = "red";
+                correctedbtn.style.backgroundColor = "green";
+                selectedbtn.disabled = true;
+                correctedbtn.disabled = true;
+            }
+        }
+
+        function h(selectedbtn) {
+            var correctbtn = document.getElementById("correctbtn");
+            if (selectedbtn == correctbtn) {
+                correctbtn.style.backgroundColor = "green";
+                selectedbtn.disabled = true;
+                correctbtn.disabled = true; totalscore = totalscore + 1;
+                scoredispay.textContent = "Score:" + totalscore
+
+            } else {
+                selectedbtn.style.backgroundColor = "red";
+                correctbtn.style.backgroundColor = "green";
+                selectedbtn.disabled = true;
+                correctbtn.disabled = true;
+            }
+        }
+        function r(selectedbtn1) {
+            var correct1btn = document.getElementById("correct1btn")
+
+            if (selectedbtn1 == correct1btn) {
+                correct1btn.style.backgroundColor = "green";
+                selectedbtn1.disabled = true;
+                correct1btn.disabled = true;
+                totalscore = totalscore + 1;
+                scoredispay.textContent = "Score:" + totalscore
+            } else {
+                selectedbtn1.style.backgroundColor = "red";
+                correct1btn.style.backgroundColor = "green";
+                selectedbtn1.disabled = true;
+                correct1btn.disabled = true;
+            }
+        }
+        function next() {
+            question1.style.display = "none";
+            questions.style.display = "block";
+        }
+        function nxt(){
+            questions.style.display="none";
+            question3.style.display="block";
+        }
+        function net(){
+            window.alert(
+            "Reason for 3rd one :MONEY will give you everything ,money gives happiness;money gives love;to handle family money is needed  ;FRIENDS will come or you can have fun with them only if you have money coungragulation see your score down")
+
+
+        }
+    </script>
+</body>
+
+</html>
